@@ -9,7 +9,7 @@ const publicPath = path.join(__dirname, '../public');
 
 app.use(express.static(publicPath));
 
-const port = 1000;
+const port = process.env.PORT || 1000;
 
 app.listen(port, () => {
 console.log(`Server started on port ${port}`);
