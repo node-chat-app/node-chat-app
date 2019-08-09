@@ -7,7 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>pascals</h1>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, omnis possimus eum cupiditate quam alias? Consequuntur corporis nulla suscipit, velit voluptate est esse nemo consequatur labore maiores quibusdam magni molestias?
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe animi voluptate at voluptates, magni nesciunt cupiditate facere vitae eveniet autem, voluptatem labore voluptas alias dolorum doloribus, impedit enim eos necessitatibus.
+ <script src="/socket.io/socket.io.js"></script> 
+ <script>
+ var socket = io();
+
+ socket.on('connect', () => {
+     console.log('connected to the server');
+ });
+
+socket.on('disconnect', () => {
+    console.log('Disconnected from the server');
+})
+ </script>
 </body>
 </html>
