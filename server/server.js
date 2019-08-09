@@ -18,10 +18,20 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('client disconnected');
     });
+
+    socket.on('createMessage', (message) => {
+        console.log('messageCreated ' , message);
+        io.emit('newMessage', {
+            from : message.from,
+            text : message.text,
+            createsAt : new Date().getTime()
+        });
+    });
 });
 
 const port = process.env.PORT || 1000;
 
 server.listen(port, () => {
-console.log(`Server started on port ${port}`);
+console.log(`Server started at port ${port}`);
+
 });
